@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}
+Add New Book
+{% endblock %}
+{% block content %}
+        <form action="{{ url_for('addrec') }}" method="POST">
+            <h3>Please Add the New Books Information:</h3>
+            Name<br>
+            <input type="text" name="name" /><br>
+
+            Author<br>
+            <textarea name="author"></textarea><br>
+
+            Year<br>
+            <input type="text" name="year" /><br>
+
+            <input type="submit" value="Submit" /><br>
+        </form>
+{% endblock %}

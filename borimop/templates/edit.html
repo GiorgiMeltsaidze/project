@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+Edit Books
+{% endblock %}
+{% block content %}
+        <h1>Edit Books Record</h1>
+        {% for row in rows %}
+        <form action="{{ url_for('editrec') }}" method="POST">
+            <h3 style="color:blue">Student ID: {{ row['rowid']}}</h3>
+            <input type="hidden" name="rowid" value="{{ row['rowid'] }}">
+            Name<br>
+            <input type="text" name="name" value="{{ row['name'] }}"/><br>
+
+            author<br>
+            <input type="text" name="add" value="{{row['author']}}"/><br>
+
+            year<br>
+            <input type="text" name="year" value="{{ row['year'] }}"/><br>
+
+
+            <input type="submit" value="Submit" /><br>
+        </form>
+        {% endfor %}
+{% endblock %}

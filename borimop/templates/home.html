@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ username }}</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+<h1>Hello {{ username }}</h1>
+    <div>
+        <h3>Tasks</h3>
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% endfor %}
+
+{% endblock %}
